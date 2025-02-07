@@ -6,7 +6,7 @@ prog: main.o integral.o
 main.o: main.c integral.h
 	gcc -c -o main.o main.c
 
-temp_api.o: integral.c
+integral.o: integral.c
 	gcc -c -o integral.o integral.c
 
 clean:
