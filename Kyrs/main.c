@@ -4,11 +4,15 @@
 
 int main(int argc, char *argv[])
 {
-    if (argc == 1)
+//Если программа запущена без аргументов:
+    if (argc == 1) {
+        printf("Integral calculation app\n");
         printf("Use the --help argument to open help window.\n");
+    }
 
     int arg = 0;
 
+//Структура с описанием аргументов:
     const struct option long_options[] = {
         {"help", no_argument, NULL, 'h'},
         {"info", no_argument, NULL, 'i'},
@@ -17,6 +21,7 @@ int main(int argc, char *argv[])
         {0, 0, 0, 0}
     };
 
+//Обработка введенного аргумента:
     while ( (arg = getopt_long(argc, argv, "hitr", long_options, NULL)) != -1) {
         switch(arg) {
             case 'h':
